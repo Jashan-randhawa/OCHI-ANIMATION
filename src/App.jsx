@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar } from "./componets/NAvbar";
+import { Navbar } from "./componets/Navbar";
 import { Landingpage } from "./componets/Landingpage";
 import { Marquee } from "./componets/Marquee";
 import { About } from "./componets/About";
