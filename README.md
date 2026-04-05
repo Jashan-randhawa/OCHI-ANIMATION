@@ -1,57 +1,110 @@
-Ochi is a modern animation project built with React and Tailwind CSS, designed to showcase smooth transitions, interactive motion, and eye-catching UI effects.
-The goal of Ochi is to blend performance and aesthetics, turning static layouts into engaging, animated experiences.
+# 🎨 OCHI Animation
 
-Tech Stack
+A stunning animated landing page inspired by [ochi.design](https://ochi.design), built with React, GSAP, Framer Motion, and Locomotive Scroll. Features smooth scroll animations, interactive eye tracking, marquee effects, and a modern dark UI.
 
-React – Component-based UI
+---
 
-Tailwind CSS – Utility-first styling
+## 🌐 Live Demo
 
-Framer Motion / GSAP (if used) – Animations and transitions
+👉 [https://ochi-animation.vercel.app](https://ochi-animation.vercel.app)
 
-Vite / CRA – Fast development setup
+---
 
-Project Structure
-ochi/
-├── src/
-│ ├── components/ Reusable components
-│ ├── assets/ Images, icons, etc.
-│ ├── App.jsx Main app
-│ └── index.jsx Entry point
+## ✨ Features
+
+- 🖱️ **Smooth Scrolling** — Locomotive Scroll for buttery smooth page scroll
+- 👁️ **Eye Tracking** — Interactive eyes that follow your cursor
+- 🎞️ **GSAP Animations** — High-performance animations on scroll and load
+- 🌀 **Framer Motion** — Page transitions and component animations
+- 📢 **Marquee Effect** — Infinite scrolling text banner
+- 🃏 **Animated Cards** — Hover effects on featured project cards
+- 📱 **Responsive Design** — Tailwind CSS for mobile-friendly layout
+- 🌑 **Dark UI** — Sleek zinc-900 background theme
+
+---
+
+## 🏗️ Project Structure
+
+```
+OCHI-ANIMATION/
 ├── public/
+├── src/
+│   ├── assets/              # Images and media
+│   ├── componets/           # UI Components
+│   │   ├── Navbar.jsx       # Top navigation bar
+│   │   ├── Landingpage.jsx  # Hero section
+│   │   ├── Marquee.jsx      # Scrolling text banner
+│   │   ├── About.jsx        # About section
+│   │   ├── Eyes.jsx         # Interactive eye tracking
+│   │   ├── featured.jsx     # Featured projects
+│   │   ├── Cards.jsx        # Project cards
+│   │   └── Footer.jsx       # Footer section
+│   ├── App.jsx              # Root component
+│   ├── main.jsx             # Entry point
+│   └── index.css            # Global styles
+├── tailwind.config.js
+├── vite.config.js
 └── package.json
+```
 
-Features
+---
 
-Smooth scroll-based animations
+## ⚙️ Local Setup
 
-Interactive UI elements
+### 1. Clone the repo
 
-Fully responsive with Tailwind
-
-Lightweight and fast
-
-Installation & Setup
-
-Clone the repo:
-git clone https://github.com/
-<your-username>/OCHI-ANIMATION.git
+```bash
+git clone https://github.com/Jashan-randhawa/OCHI-ANIMATION.git
 cd OCHI-ANIMATION
+```
 
-Install dependencies:
+### 2. Install dependencies
+
+```bash
 npm install
+```
 
-Start the dev server:
+### 3. Run the development server
+
+```bash
 npm run dev
+```
 
-Open in browser:
-http://localhost:5173
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-Demo
-(Add a screenshot or GIF of the animations here)
+### 4. Build for production
 
-Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to add or modify.
+```bash
+npm run build
+```
 
-License
-This project is licensed under the MIT License – feel free to use it and build upon it.
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| React 18 | UI framework |
+| Vite | Build tool |
+| GSAP | High-performance animations |
+| Framer Motion | Component animations & transitions |
+| Locomotive Scroll | Smooth scrolling |
+| Tailwind CSS | Utility-first styling |
+| React Icons | Icon library |
+
+---
+
+## ☁️ Deployment
+
+Deployed on **Vercel** with automatic deployments from the `main` branch.
+
+1. Push to GitHub
+2. Import project on [vercel.com](https://vercel.com)
+3. Framework: **Vite** (auto-detected)
+4. Deploy ✅
+
+---
+
+## 📝 License
+
+MIT
