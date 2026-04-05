@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { Navbar } from "./componets/Navbar";
 import { Landingpage } from "./componets/Landingpage";
 import { Marquee } from "./componets/Marquee";
@@ -21,6 +22,7 @@ const App = () => {
       <Featured />
       <Cards />
       <Footer />
+      <Analytics />
     </div>
   );
 };
