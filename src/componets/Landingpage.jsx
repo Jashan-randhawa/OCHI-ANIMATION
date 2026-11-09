@@ -12,18 +12,18 @@ export const Landingpage = ({ onCursorChange }) => {
       <div className="textstructure px-6 sm:px-12 md:px-16 lg:px-20 z-10">
         {["We Create", "Eye Opening", "Presentations"].map((item, index) => {
           return (
-            <div key={index} className="masker overflow-hidden">
+            <div key={index} className="masker overflow-hidden py-0.5">
               <div className="w-fit flex items-center flex-wrap sm:flex-nowrap">
                 {index === 1 && (
                   <motion.div
                     initial={{ width: 0, opacity: 0 }}
-                    animate={{ width: "clamp(4.5rem, 9vw, 9.5rem)", opacity: 1 }}
+                    animate={{ width: "clamp(4.5rem, 8.5vw, 9rem)", opacity: 1 }}
                     transition={{
                       ease: [0.76, 0, 0.24, 1],
                       duration: 1.1,
                       delay: 0.2,
                     }}
-                    className="mr-3 sm:mr-4 rounded-lg overflow-hidden h-[clamp(2.5rem, 5.2vw, 5.5rem)] bg-zinc-800 shadow-2xl relative flex-shrink-0 group"
+                    className="mr-3 sm:mr-4 rounded-lg overflow-hidden h-[clamp(2.5rem, 5vw, 5.2rem)] bg-zinc-800 shadow-2xl relative flex-shrink-0 group"
                   >
                     <motion.img
                       whileHover={{ scale: 1.1 }}
@@ -45,7 +45,7 @@ export const Landingpage = ({ onCursorChange }) => {
                     duration: 0.9,
                     delay: index * 0.12,
                   }}
-                  className="uppercase text-[14vw] sm:text-[11vw] lg:text-[8vw] font-['Founders_Grotesk_X-Condensed'] leading-[0.88] tracking-tight font-extrabold text-zinc-100 select-none"
+                  className="uppercase text-[13vw] sm:text-[10vw] lg:text-[7.5vw] font-['Founders_Grotesk_X-Condensed'] leading-[0.95] tracking-normal font-extrabold text-zinc-100 select-none pb-1"
                 >
                   {item}
                 </motion.h1>

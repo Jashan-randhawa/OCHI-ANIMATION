@@ -91,7 +91,7 @@ export const Featured = ({ onCursorChange }) => {
                   >
                     {/* Floating Animated Letters */}
                     <h3
-                      className={`absolute hidden lg:flex overflow-hidden text-[#CDEA68] z-30 top-1/2 -translate-y-1/2 text-7xl xl:text-9xl font-extrabold font-['Founders_Grotesk_X-Condensed'] leading-none tracking-tighter pointer-events-none select-none ${
+                      className={`absolute hidden lg:flex overflow-hidden text-[#CDEA68] z-30 top-1/2 -translate-y-1/2 text-7xl xl:text-9xl font-extrabold font-['Founders_Grotesk_X-Condensed'] leading-none tracking-normal pointer-events-none select-none ${
                         isLeft
                           ? "left-full -translate-x-1/2"
                           : "right-full translate-x-1/2"
