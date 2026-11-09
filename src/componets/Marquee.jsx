@@ -3,33 +3,48 @@ import { motion } from "framer-motion";
 
 export const Marquee = ({ onCursorChange }) => {
   return (
-    <section
-      className="w-full bg-[#004D43] py-16 sm:py-24 rounded-tl-3xl rounded-tr-3xl overflow-hidden select-none"
+    <div
+      className="w-full py-16 sm:py-24 rounded-tl-3xl rounded-tr-3xl bg-[#004D43] overflow-hidden select-none"
       onMouseEnter={() => onCursorChange?.("pointer")}
       onMouseLeave={() => onCursorChange?.("default")}
     >
-      <div className="border-t border-b border-emerald-300/30 flex whitespace-nowrap overflow-hidden">
+      <div className="text border-t-2 border-b-2 border-zinc-300/80 flex whitespace-nowrap overflow-hidden py-2 sm:py-4">
         <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: ["0%", "-50%"] }}
+          className="flex whitespace-nowrap flex-shrink-0"
+          initial={{ x: 0 }}
+          animate={{ x: "-100%" }}
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 14,
+            duration: 9,
           }}
         >
-          {/* Duplicated phrases for seamless, gap-free infinite scrolling */}
-          {[1, 2, 3, 4].map((index) => (
-            <h1
-              key={index}
-              className="text-[20vw] sm:text-[18vw] leading-[0.82] font-['Founders_Grotesk_X-Condensed'] pr-12 pt-2 uppercase font-extrabold text-white tracking-tight flex items-center"
-            >
-              We Are Ochi
-              <span className="inline-block w-4 h-4 sm:w-8 sm:h-8 rounded-full bg-[#CDEA68] ml-12" />
-            </h1>
-          ))}
+          <h1 className="text-[25vw] sm:text-[21vw] leading-none font-['Founders_Grotesk_X-Condensed'] uppercase font-bold pr-16 sm:pr-24 -mb-[3vw] -mt-[1.5vw] tracking-tighter text-white">
+            We Are Ochi
+          </h1>
+          <h1 className="text-[25vw] sm:text-[21vw] leading-none font-['Founders_Grotesk_X-Condensed'] uppercase font-bold pr-16 sm:pr-24 -mb-[3vw] -mt-[1.5vw] tracking-tighter text-white">
+            We Are Ochi
+          </h1>
+        </motion.div>
+
+        <motion.div
+          className="flex whitespace-nowrap flex-shrink-0"
+          initial={{ x: 0 }}
+          animate={{ x: "-100%" }}
+          transition={{
+            repeat: Infinity,
+            ease: "linear",
+            duration: 9,
+          }}
+        >
+          <h1 className="text-[25vw] sm:text-[21vw] leading-none font-['Founders_Grotesk_X-Condensed'] uppercase font-bold pr-16 sm:pr-24 -mb-[3vw] -mt-[1.5vw] tracking-tighter text-white">
+            We Are Ochi
+          </h1>
+          <h1 className="text-[25vw] sm:text-[21vw] leading-none font-['Founders_Grotesk_X-Condensed'] uppercase font-bold pr-16 sm:pr-24 -mb-[3vw] -mt-[1.5vw] tracking-tighter text-white">
+            We Are Ochi
+          </h1>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };

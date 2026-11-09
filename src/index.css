@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,20 +7,39 @@
 @layer base {
   @font-face {
     font-family: 'Founders_Grotesk_X-Condensed';
-    src: local('Bebas Neue'), local('Oswald');
+    src: url('https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2') format('woff2');
+    font-weight: 400 900;
+    font-style: normal;
     font-display: swap;
   }
 
   @font-face {
     font-family: 'Neue_Montreal';
-    src: local('Plus Jakarta Sans'), local('Inter');
+    src: url('https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsDxUFnMVehmWPdX-CnUpQP7Dm2XMLNDZJRi2Sk-vK.woff2') format('woff2');
+    font-weight: 300 800;
+    font-style: normal;
     font-display: swap;
   }
 
   @font-face {
     font-family: 'Neue Montreal';
-    src: local('Plus Jakarta Sans'), local('Inter');
+    src: url('https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsDxUFnMVehmWPdX-CnUpQP7Dm2XMLNDZJRi2Sk-vK.woff2') format('woff2');
+    font-weight: 300 800;
+    font-style: normal;
     font-display: swap;
+  }
+
+  /* Force font application for arbitrary Tailwind classes */
+  .font-\[\'Founders_Grotesk_X-Condensed\'\],
+  [class*="Founders_Grotesk"] {
+    font-family: 'Bebas Neue', 'Oswald', sans-serif !important;
+  }
+
+  .font-\[\'Neue_Montreal\'\],
+  .font-\[\'Neue\ Montreal\'\],
+  [class*="Neue_Montreal"],
+  [class*="Neue Montreal"] {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
   }
 
   html {
@@ -41,7 +62,7 @@
   }
 }
 
-/* Hide scrollbar when lenis is active */
+/* Lenis smooth scroll */
 html.lenis, html.lenis body {
   height: auto;
 }
