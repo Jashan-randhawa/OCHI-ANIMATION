@@ -59,8 +59,8 @@ export const CustomCursor = ({ cursorText, cursorVariant }) => {
       }}
       animate={{
         scale: isBadge ? 1 : isPointer ? 1.4 : 1,
-        width: isBadge ? 88 : isPointer ? 44 : 20,
-        height: isBadge ? 88 : isPointer ? 44 : 20,
+        width: isBadge ? 92 : isPointer ? 44 : 20,
+        height: isBadge ? 92 : isPointer ? 44 : 20,
         backgroundColor: isBadge
           ? "#CDEA68"
           : isPointer
@@ -68,8 +68,12 @@ export const CustomCursor = ({ cursorText, cursorVariant }) => {
           : "#FFFFFF",
       }}
       transition={{ type: "spring", damping: 22, stiffness: 300, mass: 0.6 }}
-      className={`fixed top-0 left-0 pointer-events-none z-[9999] rounded-full flex items-center justify-center mix-blend-difference select-none overflow-hidden ${
-        isPointer ? "border border-white/40" : ""
+      className={`fixed top-0 left-0 pointer-events-none z-[9999] rounded-full flex items-center justify-center select-none overflow-hidden ${
+        isBadge
+          ? "shadow-2xl border-2 border-black/10"
+          : isPointer
+          ? "mix-blend-difference border border-white/40"
+          : "mix-blend-difference"
       }`}
     >
       {isBadge && (
@@ -77,7 +81,7 @@ export const CustomCursor = ({ cursorText, cursorVariant }) => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
-          className="text-black font-['Founders_Grotesk_X-Condensed'] text-xl font-bold tracking-wider uppercase select-none"
+          className="text-zinc-950 font-['Founders_Grotesk_X-Condensed'] text-2xl font-black tracking-wider uppercase select-none"
         >
           {cursorText || "VIEW"}
         </motion.span>

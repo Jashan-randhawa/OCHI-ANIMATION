@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaArrowUpLong } from "react-icons/fa6";
 
 const projects = [
   {
@@ -44,14 +43,13 @@ const projects = [
 export const Featured = ({ onCursorChange }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  // Group projects into pairs of 2
   const projectPairs = [
     [projects[0], projects[1]],
     [projects[2], projects[3]],
   ];
 
   return (
-    <section id="our-work" className="w-full py-20 sm:py-28 bg-zinc-900 font-['Neue_Montreal']">
+    <section id="our-work" className="w-full py-20 sm:py-28 bg-zinc-900 font-['Neue_Montreal'] overflow-x-hidden">
       {/* Section Header */}
       <div className="w-full px-6 sm:px-12 md:px-16 lg:px-20 border-b border-zinc-800 pb-12 sm:pb-16">
         <h2 className="text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-zinc-100">
@@ -62,7 +60,7 @@ export const Featured = ({ onCursorChange }) => {
       {/* Projects Grid */}
       <div className="px-6 sm:px-12 md:px-16 lg:px-20 mt-12 sm:mt-16 flex flex-col gap-16 sm:gap-24">
         {projectPairs.map((pair, pairIdx) => (
-          <div key={pairIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-10 relative">
+          <div key={pairIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 relative items-start">
             {pair.map((project) => {
               const isHovered = hoveredCard === project.id;
               const isLeft = project.position === "left";
@@ -77,47 +75,48 @@ export const Featured = ({ onCursorChange }) => {
                     </span>
                   </div>
 
-                  {/* Card Container */}
+                  {/* Card Container: overflow-visible so the floating center text is NEVER cut off */}
                   <div
                     onMouseEnter={() => {
                       setHoveredCard(project.id);
-                      onCursorChange?.("badge");
+                      onCursorChange?.("badge", "VIEW");
                     }}
                     onMouseLeave={() => {
                       setHoveredCard(null);
                       onCursorChange?.("default");
                     }}
-                    className="relative w-full h-[400px] sm:h-[550px] lg:h-[620px] rounded-2xl overflow-hidden cursor-pointer group bg-zinc-800 shadow-xl"
+                    className="relative w-full h-[400px] sm:h-[550px] lg:h-[620px] rounded-2xl cursor-pointer group bg-zinc-950 shadow-xl"
                   >
-                    {/* Floating Animated Letters */}
+                    {/* Floating Center Letters: Placed above card with z-40 so all letters show completely */}
                     <h3
-                      className={`absolute hidden lg:flex overflow-hidden text-[#CDEA68] z-30 top-1/2 -translate-y-1/2 text-7xl xl:text-9xl font-extrabold font-['Founders_Grotesk_X-Condensed'] leading-none tracking-normal pointer-events-none select-none ${
+                      className={`absolute hidden lg:flex text-[#CDEA68] z-40 top-1/2 -translate-y-1/2 text-8xl xl:text-9xl font-extrabold font-['Founders_Grotesk_X-Condensed'] leading-none tracking-normal pointer-events-none select-none drop-shadow-2xl ${
                         isLeft
                           ? "left-full -translate-x-1/2"
                           : "right-full translate-x-1/2"
                       }`}
                     >
                       {project.title.split("").map((letter, idx) => (
-                        <motion.span
-                          key={idx}
-                          initial={{ y: "100%" }}
-                          animate={isHovered ? { y: "0%" } : { y: "100%" }}
-                          transition={{
-                            ease: [0.22, 1, 0.36, 1],
-                            duration: 0.45,
-                            delay: idx * 0.03,
-                          }}
-                          className="inline-block"
-                        >
-                          {letter}
-                        </motion.span>
+                        <div key={idx} className="overflow-hidden inline-block py-1">
+                          <motion.span
+                            initial={{ y: "100%" }}
+                            animate={isHovered ? { y: "0%" } : { y: "100%" }}
+                            transition={{
+                              ease: [0.22, 1, 0.36, 1],
+                              duration: 0.45,
+                              delay: idx * 0.03,
+                            }}
+                            className="inline-block"
+                          >
+                            {letter}
+                          </motion.span>
+                        </div>
                       ))}
                     </h3>
 
-                    {/* Image with zoom on hover */}
-                    <div className="w-full h-full overflow-hidden rounded-2xl">
+                    {/* Image Container: overflow-hidden for the inner image zoom */}
+                    <div className="w-full h-full overflow-hidden rounded-2xl bg-zinc-950 border border-zinc-800/60 flex items-center justify-center">
                       <motion.img
-                        animate={{ scale: isHovered ? 1.06 : 1 }}
+                        animate={{ scale: isHovered ? 1.05 : 1 }}
                         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         src={project.image}
                         onError={(e) => {
