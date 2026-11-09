@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Lenis from "lenis";
 import { Analytics } from "@vercel/analytics/react";
 import { Navbar } from "./componets/Navbar";
@@ -9,12 +9,8 @@ import { Eyes } from "./componets/Eyes";
 import { Featured } from "./componets/featured";
 import { Cards } from "./componets/Cards";
 import { Footer } from "./componets/Footer";
-import { CustomCursor } from "./componets/CustomCursor";
 
 const App = () => {
-  const [cursorText, setCursorText] = useState("");
-  const [cursorVariant, setCursorVariant] = useState("default");
-
   // Initialize unified Lenis smooth scroll
   useEffect(() => {
     const lenis = new Lenis({
@@ -41,24 +37,16 @@ const App = () => {
     };
   }, []);
 
-  const handleCursorChange = (variant, text = "") => {
-    setCursorVariant(variant);
-    setCursorText(text);
-  };
-
   return (
     <div className="w-full min-h-screen text-white bg-zinc-900 overflow-x-hidden relative selection:bg-[#CDEA68] selection:text-zinc-900">
-      {/* Interactive Custom Magnetic Cursor */}
-      <CustomCursor cursorText={cursorText} cursorVariant={cursorVariant} />
-
-      <Navbar onCursorChange={handleCursorChange} />
-      <Landingpage onCursorChange={handleCursorChange} />
-      <Marquee onCursorChange={handleCursorChange} />
-      <About onCursorChange={handleCursorChange} />
-      <Eyes onCursorChange={handleCursorChange} />
-      <Featured onCursorChange={handleCursorChange} />
-      <Cards onCursorChange={handleCursorChange} />
-      <Footer onCursorChange={handleCursorChange} />
+      <Navbar />
+      <Landingpage />
+      <Marquee />
+      <About />
+      <Eyes />
+      <Featured />
+      <Cards />
+      <Footer />
       <Analytics />
     </div>
   );

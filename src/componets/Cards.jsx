@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const Cards = ({ onCursorChange }) => {
+export const Cards = () => {
   return (
     <section className="w-full py-20 px-6 sm:px-12 md:px-16 lg:px-20 bg-zinc-900 font-['Neue_Montreal']">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 w-full">
@@ -16,11 +16,7 @@ export const Cards = ({ onCursorChange }) => {
             src="https://ochi.design/wp-content/uploads/2022/04/logo001.svg"
             alt="Ochi Logo"
           />
-          <button
-            className="absolute px-4 sm:px-5 py-2 border border-[#CDEA68] text-[#CDEA68] rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-xs tracking-wider uppercase font-light group-hover:bg-[#CDEA68] group-hover:text-black transition-colors"
-            onMouseEnter={() => onCursorChange?.("pointer")}
-            onMouseLeave={() => onCursorChange?.("default")}
-          >
+          <button className="absolute px-4 sm:px-5 py-2 border border-[#CDEA68] text-[#CDEA68] rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-xs tracking-wider uppercase font-light group-hover:bg-[#CDEA68] group-hover:text-black transition-colors">
             &copy; 2019–2026
           </button>
         </motion.div>
@@ -36,11 +32,7 @@ export const Cards = ({ onCursorChange }) => {
             src="https://ochi.design/wp-content/uploads/2022/04/logo002.svg"
             alt="Clutch Rating"
           />
-          <button
-            className="absolute px-3 sm:px-4 py-2 border border-zinc-400 text-zinc-300 rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-[11px] sm:text-xs tracking-wider uppercase font-light group-hover:bg-white group-hover:text-black group-hover:border-white transition-colors"
-            onMouseEnter={() => onCursorChange?.("pointer")}
-            onMouseLeave={() => onCursorChange?.("default")}
-          >
+          <button className="absolute px-3 sm:px-4 py-2 border border-zinc-400 text-zinc-300 rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-[11px] sm:text-xs tracking-wider uppercase font-light group-hover:bg-white group-hover:text-black group-hover:border-white transition-colors">
             Rating 5.0 on Clutch
           </button>
         </motion.div>
@@ -56,11 +48,7 @@ export const Cards = ({ onCursorChange }) => {
             src="https://ochi.design/wp-content/uploads/2022/04/logo003.png"
             alt="Business Bootcamp Alumni"
           />
-          <button
-            className="absolute px-3 sm:px-4 py-2 border border-zinc-400 text-zinc-300 rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-[11px] sm:text-xs tracking-wider uppercase font-light group-hover:bg-white group-hover:text-black group-hover:border-white transition-colors"
-            onMouseEnter={() => onCursorChange?.("pointer")}
-            onMouseLeave={() => onCursorChange?.("default")}
-          >
+          <button className="absolute px-3 sm:px-4 py-2 border border-zinc-400 text-zinc-300 rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-[11px] sm:text-xs tracking-wider uppercase font-light group-hover:bg-white group-hover:text-black group-hover:border-white transition-colors">
             Bootcamp Alumni
           </button>
         </motion.div>

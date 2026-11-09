@@ -40,7 +40,7 @@ const projects = [
   },
 ];
 
-export const Featured = ({ onCursorChange }) => {
+export const Featured = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const projectPairs = [
@@ -77,14 +77,8 @@ export const Featured = ({ onCursorChange }) => {
 
                   {/* Card Container: overflow-visible so the floating center text is NEVER cut off */}
                   <div
-                    onMouseEnter={() => {
-                      setHoveredCard(project.id);
-                      onCursorChange?.("badge", "VIEW");
-                    }}
-                    onMouseLeave={() => {
-                      setHoveredCard(null);
-                      onCursorChange?.("default");
-                    }}
+                    onMouseEnter={() => setHoveredCard(project.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
                     className="relative w-full h-[400px] sm:h-[550px] lg:h-[620px] rounded-2xl cursor-pointer group bg-zinc-950 shadow-xl"
                   >
                     {/* Floating Center Letters: Placed above card with z-40 so all letters show completely */}
@@ -148,11 +142,7 @@ export const Featured = ({ onCursorChange }) => {
 
       {/* View All Case Studies Button */}
       <div className="w-full flex justify-center mt-20 sm:mt-28">
-        <div
-          className="group relative overflow-hidden flex items-center gap-6 px-9 py-5 bg-zinc-100 text-zinc-950 uppercase rounded-full text-xs sm:text-sm tracking-wider font-semibold cursor-pointer transition-colors shadow-2xl"
-          onMouseEnter={() => onCursorChange?.("pointer")}
-          onMouseLeave={() => onCursorChange?.("default")}
-        >
+        <div className="group relative overflow-hidden flex items-center gap-6 px-9 py-5 bg-zinc-100 text-zinc-950 uppercase rounded-full text-xs sm:text-sm tracking-wider font-semibold cursor-pointer transition-colors shadow-2xl">
           <span className="relative z-10 group-hover:text-white transition-colors duration-400">
             View All Case Studies
           </span>

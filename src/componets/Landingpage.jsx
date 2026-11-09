@@ -2,7 +2,7 @@ import React from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
-export const Landingpage = ({ onCursorChange }) => {
+export const Landingpage = () => {
   return (
     <section className="relative w-full min-h-screen bg-zinc-900 pt-28 sm:pt-36 lg:pt-40 flex flex-col justify-between overflow-hidden">
       {/* Background ambient subtle gradient */}
@@ -66,11 +66,7 @@ export const Landingpage = ({ onCursorChange }) => {
         </p>
 
         {/* Magnetic Interactive CTA Button */}
-        <div
-          className="start flex items-center gap-3 group cursor-pointer"
-          onMouseEnter={() => onCursorChange?.("pointer")}
-          onMouseLeave={() => onCursorChange?.("default")}
-        >
+        <div className="start flex items-center gap-3 group cursor-pointer">
           <div className="relative overflow-hidden px-6 py-2.5 border border-zinc-500/80 rounded-full font-light text-xs sm:text-sm uppercase tracking-wider text-zinc-200 transition-colors duration-500 group-hover:border-white">
             <span className="relative z-10 transition-colors duration-500 group-hover:text-black font-medium">
               Start The Project
@@ -81,9 +77,7 @@ export const Landingpage = ({ onCursorChange }) => {
 
           {/* Interactive Arrow Button */}
           <div className="relative overflow-hidden h-10 w-10 border border-zinc-500/80 rounded-full flex items-center justify-center transition-colors duration-500 group-hover:border-white group-hover:bg-[#CDEA68]">
-            <motion.div
-              className="relative w-full h-full flex items-center justify-center text-zinc-200 group-hover:text-black transition-colors"
-            >
+            <motion.div className="relative w-full h-full flex items-center justify-center text-zinc-200 group-hover:text-black transition-colors">
               <FaArrowUpLong className="rotate-45 text-sm transition-transform duration-300 group-hover:translate-x-4 group-hover:-translate-y-4" />
               <FaArrowUpLong className="rotate-45 text-sm absolute -translate-x-4 translate-y-4 transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
             </motion.div>

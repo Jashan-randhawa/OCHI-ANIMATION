@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 
-export const Navbar = ({ onCursorChange }) => {
+export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -33,8 +33,6 @@ export const Navbar = ({ onCursorChange }) => {
         <a
           href="#"
           className="logo text-white cursor-pointer transition-transform duration-300 hover:scale-105"
-          onMouseEnter={() => onCursorChange?.("pointer")}
-          onMouseLeave={() => onCursorChange?.("default")}
         >
           <svg
             width="72"
@@ -76,8 +74,6 @@ export const Navbar = ({ onCursorChange }) => {
               className={`relative text-sm lg:text-base font-light tracking-wide text-zinc-300 hover:text-white transition-colors duration-200 group ${
                 index === 4 ? "ml-8 lg:ml-16 font-normal text-white" : ""
               }`}
-              onMouseEnter={() => onCursorChange?.("pointer")}
-              onMouseLeave={() => onCursorChange?.("default")}
             >
               {item}
               <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#CDEA68] transition-all duration-300 group-hover:w-full" />

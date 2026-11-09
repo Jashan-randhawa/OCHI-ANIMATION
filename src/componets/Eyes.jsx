@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-export const Eyes = ({ onCursorChange }) => {
+export const Eyes = () => {
   const [leftEyePos, setLeftEyePos] = useState({ x: 0, y: 0, rotate: 0 });
   const [rightEyePos, setRightEyePos] = useState({ x: 0, y: 0, rotate: 0 });
   const [isBlinking, setIsBlinking] = useState(false);
@@ -24,7 +24,6 @@ export const Eyes = ({ onCursorChange }) => {
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
         const angle = Math.atan2(deltaY, deltaX);
 
-        // Maximum travel inside eyeball in px
         const maxRadius = Math.min(rect.width * 0.18, 28);
         const travel = Math.min(distance * 0.1, maxRadius);
 
@@ -70,12 +69,6 @@ export const Eyes = ({ onCursorChange }) => {
     <section
       onClick={triggerBlink}
       className="eyes w-full h-[60vh] sm:h-[80vh] lg:h-screen overflow-hidden relative cursor-pointer select-none"
-      onMouseEnter={() => {
-        onCursorChange?.("badge");
-      }}
-      onMouseLeave={() => {
-        onCursorChange?.("default");
-      }}
     >
       {/* Background Graphic with Vignette */}
       <div
@@ -104,12 +97,10 @@ export const Eyes = ({ onCursorChange }) => {
               }}
               className="relative w-[65%] h-[65%] rounded-full bg-zinc-950 flex items-center justify-center shadow-inner"
             >
-              {/* Pupil Text */}
               <span className="text-white font-['Neue_Montreal'] uppercase text-xs sm:text-sm font-medium tracking-widest select-none pointer-events-none">
                 Play
               </span>
 
-              {/* White glint line rotating towards cursor */}
               <div
                 style={{
                   transform: `translate(-50%, -50%) rotate(${leftEyePos.rotate}deg)`,
@@ -128,7 +119,6 @@ export const Eyes = ({ onCursorChange }) => {
             transition={{ duration: 0.12 }}
             className="w-[32vw] h-[32vw] max-w-[200px] max-h-[200px] sm:max-w-[230px] sm:max-h-[230px] rounded-full bg-zinc-100 flex items-center justify-center shadow-2xl relative overflow-hidden"
           >
-            {/* Pupil (Dark Iris) with 2D Translation */}
             <div
               style={{
                 transform: `translate(${rightEyePos.x}px, ${rightEyePos.y}px)`,
@@ -136,12 +126,10 @@ export const Eyes = ({ onCursorChange }) => {
               }}
               className="relative w-[65%] h-[65%] rounded-full bg-zinc-950 flex items-center justify-center shadow-inner"
             >
-              {/* Pupil Text */}
               <span className="text-white font-['Neue_Montreal'] uppercase text-xs sm:text-sm font-medium tracking-widest select-none pointer-events-none">
                 Play
               </span>
 
-              {/* White glint line rotating towards cursor */}
               <div
                 style={{
                   transform: `translate(-50%, -50%) rotate(${rightEyePos.rotate}deg)`,

@@ -2,7 +2,7 @@ import React from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
-export const About = ({ onCursorChange }) => {
+export const About = () => {
   const socialLinks = [
     { name: "Instagram", href: "#" },
     { name: "Behance", href: "#" },
@@ -56,8 +56,6 @@ export const About = ({ onCursorChange }) => {
             whileHover={{ scale: 1.08 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-zinc-950/30 flex items-center justify-center cursor-pointer group shadow-sm bg-zinc-950/[0.04]"
-            onMouseEnter={() => onCursorChange?.("pointer")}
-            onMouseLeave={() => onCursorChange?.("default")}
           >
             {/* Spinning Circular Typography */}
             <motion.div
@@ -134,9 +132,7 @@ export const About = ({ onCursorChange }) => {
               key={item.name}
               href={item.href}
               whileHover={{ x: 4 }}
-              className="group flex items-center justify-between py-1.5 border-b border-zinc-950/15 hover:border-zinc-950 transition-colors w-full max-w-[180px] text-zinc-900 font-normal"
-              onMouseEnter={() => onCursorChange?.("pointer")}
-              onMouseLeave={() => onCursorChange?.("default")}
+              className="group flex items-center justify-between py-1.5 border-b border-zinc-950/15 hover:border-zinc-950 transition-colors w-full max-w-[180px] text-zinc-900 font-normal cursor-pointer"
             >
               <span className="relative">
                 {item.name}
@@ -161,11 +157,7 @@ export const About = ({ onCursorChange }) => {
             </p>
           </div>
 
-          <button
-            className="group relative overflow-hidden flex items-center gap-6 px-8 py-5 bg-zinc-900 text-white uppercase rounded-full text-xs sm:text-sm tracking-wider font-medium cursor-pointer transition-colors shadow-lg"
-            onMouseEnter={() => onCursorChange?.("pointer")}
-            onMouseLeave={() => onCursorChange?.("default")}
-          >
+          <button className="group relative overflow-hidden flex items-center gap-6 px-8 py-5 bg-zinc-900 text-white uppercase rounded-full text-xs sm:text-sm tracking-wider font-medium cursor-pointer transition-colors shadow-lg">
             <span className="relative z-10 group-hover:text-zinc-950 transition-colors duration-400 font-semibold">
               Read More
             </span>
