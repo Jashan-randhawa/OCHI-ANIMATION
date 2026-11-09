@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Lenis from "lenis";
 import { Analytics } from "@vercel/analytics/react";
 import { Navbar } from "./componets/Navbar";
 import { Landingpage } from "./componets/Landingpage";
@@ -8,20 +9,56 @@ import { Eyes } from "./componets/Eyes";
 import { Featured } from "./componets/featured";
 import { Cards } from "./componets/Cards";
 import { Footer } from "./componets/Footer";
-import LocomotiveScroll from "locomotive-scroll";
+import { CustomCursor } from "./componets/CustomCursor";
 
 const App = () => {
-  const locomotiveScroll = new LocomotiveScroll();
+  const [cursorText, setCursorText] = useState("");
+  const [cursorVariant, setCursorVariant] = useState("default");
+
+  // Initialize unified Lenis smooth scroll
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
+    });
+
+    let animationFrameId;
+    function raf(time) {
+      lenis.raf(time);
+      animationFrameId = requestAnimationFrame(raf);
+    }
+
+    animationFrameId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      lenis.destroy();
+    };
+  }, []);
+
+  const handleCursorChange = (variant, text = "") => {
+    setCursorVariant(variant);
+    setCursorText(text);
+  };
+
   return (
-    <div className=" w-full min-h-screen text-white bg-zinc-900">
-      <Navbar />
-      <Landingpage />
-      <Marquee />
-      <About />
-      <Eyes />
-      <Featured />
-      <Cards />
-      <Footer />
+    <div className="w-full min-h-screen text-white bg-zinc-900 overflow-x-hidden relative selection:bg-[#CDEA68] selection:text-zinc-900">
+      {/* Interactive Custom Magnetic Cursor */}
+      <CustomCursor cursorText={cursorText} cursorVariant={cursorVariant} />
+
+      <Navbar onCursorChange={handleCursorChange} />
+      <Landingpage onCursorChange={handleCursorChange} />
+      <Marquee onCursorChange={handleCursorChange} />
+      <About onCursorChange={handleCursorChange} />
+      <Eyes onCursorChange={handleCursorChange} />
+      <Featured onCursorChange={handleCursorChange} />
+      <Cards onCursorChange={handleCursorChange} />
+      <Footer onCursorChange={handleCursorChange} />
       <Analytics />
     </div>
   );

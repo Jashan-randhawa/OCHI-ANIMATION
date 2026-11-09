@@ -1,6 +1,6 @@
 # 🎨 OCHI Animation
 
-A stunning animated landing page inspired by [ochi.design](https://ochi.design), built with React, GSAP, Framer Motion, and Locomotive Scroll. Features smooth scroll animations, interactive eye tracking, marquee effects, and a modern dark UI.
+A stunning animated landing page inspired by [ochi.design](https://ochi.design), built with React, Framer Motion, GSAP, and Lenis. Features buttery smooth scroll animations, realistic 2-axis interactive eye tracking, custom magnetic cursor, marquee effects, and a modern dark UI.
 
 ---
 
@@ -12,13 +12,15 @@ A stunning animated landing page inspired by [ochi.design](https://ochi.design),
 
 ## ✨ Features
 
-- 🖱️ **Smooth Scrolling** — Locomotive Scroll for buttery smooth page scroll
-- 👁️ **Eye Tracking** — Interactive eyes that follow your cursor
-- 🎞️ **GSAP Animations** — High-performance animations on scroll and load
-- 🌀 **Framer Motion** — Page transitions and component animations
-- 📢 **Marquee Effect** — Infinite scrolling text banner
-- 🃏 **Animated Cards** — Hover effects on featured project cards
-- 📱 **Responsive Design** — Tailwind CSS for mobile-friendly layout
+- 🖱️ **Buttery Smooth Scrolling** — Lenis integration for fluid momentum scrolling
+- 👁️ **Realistic 2-Axis Eye Tracking** — Clamped 2D pupil translation with rotating glints and click-to-blink interaction
+- 🎯 **Custom Magnetic Cursor** — Reactive cursor with spring physics and contextual badges ("VIEW", "PLAY")
+- 🔤 **Authentic Modern Typography** — Grotesque condensed display & neo-grotesque typography stacks
+- 🔘 **Signature Ochi Magnetic Buttons** — Liquid pill fills and animated 45° arrow transitions
+- 🎞️ **Framer Motion & GSAP** — High-performance letter-staggered reveals and mask entrances
+- 📢 **Seamless Infinite Marquee** — Gap-free looped ticker banner
+- 🃏 **Enhanced Featured Projects** — 4 showcase projects (Fyde, Vise, Trawa, Premium Blend) with tags & hover states
+- 📱 **Fully Responsive** — Fluid typography and mobile slide-in navigation drawer
 - 🌑 **Dark UI** — Sleek zinc-900 background theme
 
 ---
@@ -31,17 +33,18 @@ OCHI-ANIMATION/
 ├── src/
 │   ├── assets/              # Images and media
 │   ├── componets/           # UI Components
-│   │   ├── Navbar.jsx       # Top navigation bar
-│   │   ├── Landingpage.jsx  # Hero section
-│   │   ├── Marquee.jsx      # Scrolling text banner
-│   │   ├── About.jsx        # About section
-│   │   ├── Eyes.jsx         # Interactive eye tracking
-│   │   ├── featured.jsx     # Featured projects
-│   │   ├── Cards.jsx        # Project cards
-│   │   └── Footer.jsx       # Footer section
-│   ├── App.jsx              # Root component
+│   │   ├── Navbar.jsx       # Top navigation & mobile drawer
+│   │   ├── Landingpage.jsx  # Hero section with animated pill
+│   │   ├── Marquee.jsx      # Infinite scrolling text banner
+│   │   ├── About.jsx        # About & approach section
+│   │   ├── Eyes.jsx         # 2-axis interactive eye tracking
+│   │   ├── featured.jsx     # Featured projects & letter stagger
+│   │   ├── Cards.jsx        # Project & rating cards
+│   │   ├── Footer.jsx       # Footer section
+│   │   └── CustomCursor.jsx # Spring magnetic cursor
+│   ├── App.jsx              # Root component & Lenis scroll provider
 │   ├── main.jsx             # Entry point
-│   └── index.css            # Global styles
+│   └── index.css            # Global styles & fonts
 ├── tailwind.config.js
 ├── vite.config.js
 └── package.json
@@ -86,9 +89,9 @@ npm run build
 |------------|---------|
 | React 18 | UI framework |
 | Vite | Build tool |
-| GSAP | High-performance animations |
+| Lenis | Smooth scrolling |
 | Framer Motion | Component animations & transitions |
-| Locomotive Scroll | Smooth scrolling |
+| GSAP | Animation utilities |
 | Tailwind CSS | Utility-first styling |
 | React Icons | Icon library |
 
@@ -97,14 +100,3 @@ npm run build
 ## ☁️ Deployment
 
 Deployed on **Vercel** with automatic deployments from the `main` branch.
-
-1. Push to GitHub
-2. Import project on [vercel.com](https://vercel.com)
-3. Framework: **Vite** (auto-detected)
-4. Deploy ✅
-
----
-
-## 📝 License
-
-MIT

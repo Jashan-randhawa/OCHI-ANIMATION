@@ -1,42 +1,70 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-export const Cards = () => {
+export const Cards = ({ onCursorChange }) => {
   return (
-    <div className=" w-full h-screen bg-zinc-900 items-center px-32 flex gap-5 ">
-      <div className="cardcontainer h-[50vh] w-1/2">
-        <div className=" card relative rounded-xl w-full h-full  bg-[#004D43] flex items-center justify-center ">
+    <section className="w-full py-20 px-6 sm:px-12 md:px-16 lg:px-20 bg-zinc-900 font-['Neue_Montreal']">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 w-full">
+        {/* Left Big Card */}
+        <motion.div
+          whileHover={{ y: -6 }}
+          transition={{ duration: 0.3 }}
+          className="lg:col-span-6 h-[340px] sm:h-[420px] rounded-2xl bg-[#004D43] flex flex-col items-center justify-center relative p-8 shadow-xl group border border-emerald-900/40"
+        >
           <img
-            className=" w-32"
+            className="w-32 sm:w-40 transition-transform duration-500 group-hover:scale-110"
             src="https://ochi.design/wp-content/uploads/2022/04/logo001.svg"
-            alt=""
+            alt="Ochi Logo"
           />
-          <button className=" absolute px-5 py-3 border-2 rounded-full left-5 bottom-5 text-xs ">
-            &copy;2019-2024
+          <button
+            className="absolute px-4 sm:px-5 py-2 border border-[#CDEA68] text-[#CDEA68] rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-xs tracking-wider uppercase font-light group-hover:bg-[#CDEA68] group-hover:text-black transition-colors"
+            onMouseEnter={() => onCursorChange?.("pointer")}
+            onMouseLeave={() => onCursorChange?.("default")}
+          >
+            &copy; 2019–2026
           </button>
-        </div>
-      </div>
-      <div className="cardcontainer flex gap-5 h-[50vh] w-1/2">
-        <div className=" card relative flex items-center justify-center w-1/2 rounded-xl h-full  bg-[#192826] ">
+        </motion.div>
+
+        {/* Right Card 1 (Clutch) */}
+        <motion.div
+          whileHover={{ y: -6 }}
+          transition={{ duration: 0.3 }}
+          className="lg:col-span-3 h-[340px] sm:h-[420px] rounded-2xl bg-[#192826] flex flex-col items-center justify-center relative p-8 shadow-xl group border border-zinc-800"
+        >
           <img
-            className=" w-32 "
+            className="w-28 sm:w-36 transition-transform duration-500 group-hover:scale-110"
             src="https://ochi.design/wp-content/uploads/2022/04/logo002.svg"
-            alt=""
+            alt="Clutch Rating"
           />
-          <button className=" absolute px-5 py-3 border-2 rounded-full left-5 bottom-5 text-xs ">
-            RATING 5.0 ON CLUTCH
+          <button
+            className="absolute px-3 sm:px-4 py-2 border border-zinc-400 text-zinc-300 rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-[11px] sm:text-xs tracking-wider uppercase font-light group-hover:bg-white group-hover:text-black group-hover:border-white transition-colors"
+            onMouseEnter={() => onCursorChange?.("pointer")}
+            onMouseLeave={() => onCursorChange?.("default")}
+          >
+            Rating 5.0 on Clutch
           </button>
-        </div>
-        <div className=" card flex relative items-center justify-center w-1/2 h-full rounded-xl  bg-[#192826] ">
+        </motion.div>
+
+        {/* Right Card 2 (Bootcamp) */}
+        <motion.div
+          whileHover={{ y: -6 }}
+          transition={{ duration: 0.3 }}
+          className="lg:col-span-3 h-[340px] sm:h-[420px] rounded-2xl bg-[#192826] flex flex-col items-center justify-center relative p-8 shadow-xl group border border-zinc-800"
+        >
           <img
-            className=" w-32 "
+            className="w-24 sm:w-32 transition-transform duration-500 group-hover:scale-110"
             src="https://ochi.design/wp-content/uploads/2022/04/logo003.png"
-            alt=""
+            alt="Business Bootcamp Alumni"
           />
-          <button className=" absolute px-5 py-3 border-2 rounded-full left-5 bottom-5 text-xs ">
-            BUSINESS BOOTCAMP ALUMNI
+          <button
+            className="absolute px-3 sm:px-4 py-2 border border-zinc-400 text-zinc-300 rounded-full left-6 sm:left-8 bottom-6 sm:bottom-8 text-[11px] sm:text-xs tracking-wider uppercase font-light group-hover:bg-white group-hover:text-black group-hover:border-white transition-colors"
+            onMouseEnter={() => onCursorChange?.("pointer")}
+            onMouseLeave={() => onCursorChange?.("default")}
+          >
+            Bootcamp Alumni
           </button>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
