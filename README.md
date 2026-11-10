@@ -1,60 +1,79 @@
 # 🎨 OCHI Animation
 
-A stunning animated landing page inspired by [ochi.design](https://ochi.design), built with React, Framer Motion, GSAP, and Lenis. Features buttery smooth scroll animations, realistic 2-axis interactive eye tracking, custom magnetic cursor, marquee effects, and a modern dark UI.
+[![Live Demo](https://img.shields.io/badge/Demo-ochi--animation.vercel.app-brightgreen?style=for-the-badge&logo=vercel)](https://ochi-animation.vercel.app)
+[![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5.4.7-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.12-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.8.0-FF0055?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+
+An award-winning, high-performance animated website inspired by [ochi.design](https://ochi.design). Built with modern frontend engineering principles featuring buttery smooth momentum scrolling, interactive 2-axis eye tracking, mask-reveal typography, rotating vector badges, and a balanced dark editorial aesthetic.
 
 ---
 
 ## 🌐 Live Demo
 
-👉 [https://ochi-animation.vercel.app](https://ochi-animation.vercel.app)
+Experience the live deployment on Vercel:  
+👉 **[https://ochi-animation.vercel.app](https://ochi-animation.vercel.app)**
 
 ---
 
-## ✨ Features
+## ✨ Highlights & Key Features
 
-- 🖱️ **Buttery Smooth Scrolling** — Lenis integration for fluid momentum scrolling
-- 👁️ **Realistic 2-Axis Eye Tracking** — Clamped 2D pupil translation with rotating glints and click-to-blink interaction
-- 🎯 **Custom Magnetic Cursor** — Reactive cursor with spring physics and contextual badges ("VIEW", "PLAY")
-- 🔤 **Authentic Modern Typography** — Grotesque condensed display & neo-grotesque typography stacks
-- 🔘 **Signature Ochi Magnetic Buttons** — Liquid pill fills and animated 45° arrow transitions
-- 🎞️ **Framer Motion & GSAP** — High-performance letter-staggered reveals and mask entrances
-- 📢 **Seamless Infinite Marquee** — Gap-free looped ticker banner
-- 🃏 **Enhanced Featured Projects** — 4 showcase projects (Fyde, Vise, Trawa, Premium Blend) with tags & hover states
-- 📱 **Fully Responsive** — Fluid typography and mobile slide-in navigation drawer
-- 🌑 **Dark UI** — Sleek zinc-900 background theme
+- 🏎️ **Unified Lenis Smooth Scrolling** — Centralized [Lenis](https://github.com/darkroomengineering/lenis) momentum scrolling at 60/120fps with zero layout stutter or coordinate tearing.
+- 👁️ **Realistic 2-Axis Eye Tracking** — Clamped $(x, y)$ pupil translation within the iris boundary, rotating glints targeting the pointer, and interactive **click-to-blink** physics.
+- 🔤 **Authentic Modern Typography** — Direct woff2 embedding of Grotesque condensed display (`Bebas Neue`, `Oswald`) and Swiss Neo-Grotesque (`Plus Jakarta Sans`) eliminating any fallback font issues.
+- 🔘 **Signature Ochi Pill Buttons** — Fluid background hover bubble fills with animated 45° arrow transitions that exit top-right and re-enter from bottom-left.
+- 📢 **Seamless Infinite Marquee** — Mathematical `0%` to `-50%` single-track loop with refined 1px borders and relaxed letter tracking to completely eliminate word collisions.
+- 🎡 **Rotating Agency Stamp** — Circular typography badge (`• STRATEGY • DESIGN • IMPACT • OCHI`) rotating infinitely with center arrow hover springs in the About section.
+- 🃏 **Expanded Showcase Projects** — 4 full featured projects (**FYDE**, **VISE**, **TRAWA**, **PREMIUM BLEND**) with category tags, smooth image zoom, and unclipped letter-by-letter reveal masks.
+- 📋 **Structured & Meaningful Footer** — 3-column navigation layout (`M: Menu`, `S: Socials`, `L: Locations`, `E: Inquiries`) featuring an interactive **1-click Copy-to-Clipboard** email pill and mini interactive eye widgets.
+- 📱 **100% Responsive Design** — Fluid typography scaling, clean spacing, and an animated mobile navigation drawer.
 
 ---
 
-## 🏗️ Project Structure
+## 🏗️ Project Architecture
 
 ```
 OCHI-ANIMATION/
 ├── public/
 ├── src/
-│   ├── assets/              # Images and media
+│   ├── assets/              # Showcase artwork & imagery
 │   ├── componets/           # UI Components
-│   │   ├── Navbar.jsx       # Top navigation & mobile drawer
-│   │   ├── Landingpage.jsx  # Hero section with animated pill
-│   │   ├── Marquee.jsx      # Infinite scrolling text banner
-│   │   ├── About.jsx        # About & approach section
-│   │   ├── Eyes.jsx         # 2-axis interactive eye tracking
-│   │   ├── featured.jsx     # Featured projects & letter stagger
-│   │   ├── Cards.jsx        # Project & rating cards
-│   │   ├── Footer.jsx       # Footer section
-│   │   └── CustomCursor.jsx # Spring magnetic cursor
-│   ├── App.jsx              # Root component & Lenis scroll provider
-│   ├── main.jsx             # Entry point
-│   └── index.css            # Global styles & fonts
-├── tailwind.config.js
-├── vite.config.js
-└── package.json
+│   │   ├── Navbar.jsx       # Glassmorphism header & mobile navigation drawer
+│   │   ├── Landingpage.jsx  # Hero section with animated image pill & magnetic CTA
+│   │   ├── Marquee.jsx      # Gap-free infinite marquee banner with refined borders
+│   │   ├── About.jsx        # Agency philosophy, rotating stamp & metrics strip
+│   │   ├── Eyes.jsx         # 2-axis interactive eyeball tracking with blink effect
+│   │   ├── featured.jsx     # 4 project showcases with letter-stagger animations
+│   │   ├── Cards.jsx        # Clutch 5.0 rating & bootcamp alumni showcase cards
+│   │   └── Footer.jsx       # 3-column footer with copy-email pill & mini eyes
+│   ├── App.jsx              # Root application & Lenis scroll provider
+│   ├── main.jsx             # React DOM entry point
+│   └── index.css            # Global typography, @font-face & Lenis styles
+├── tailwind.config.js       # Custom colors (ochi-lime, ochi-darkGreen) & fonts
+├── vite.config.js           # Vite build configuration
+└── package.json             # Dependencies & build scripts
 ```
 
 ---
 
-## ⚙️ Local Setup
+## 🛠️ Tech Stack
 
-### 1. Clone the repo
+| Technology | Purpose |
+|------------|---------|
+| **React 18** | Component architecture and state management |
+| **Vite** | Fast modern build tooling and bundling |
+| **Lenis** | Lightweight smooth momentum scroll |
+| **Framer Motion** | Complex UI transitions, reveals, and gesture springs |
+| **GSAP** | Motion utilities and performance animation hooks |
+| **Tailwind CSS** | Utility-first styling with custom design tokens |
+| **React Icons** | Clean SVG iconography (FontAwesome & HeroIcons) |
+
+---
+
+## ⚙️ Local Development
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Jashan-randhawa/OCHI-ANIMATION.git
@@ -81,22 +100,21 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 npm run build
 ```
 
----
+Preview the production build locally:
 
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| React 18 | UI framework |
-| Vite | Build tool |
-| Lenis | Smooth scrolling |
-| Framer Motion | Component animations & transitions |
-| GSAP | Animation utilities |
-| Tailwind CSS | Utility-first styling |
-| React Icons | Icon library |
+```bash
+npm run preview
+```
 
 ---
 
 ## ☁️ Deployment
 
-Deployed on **Vercel** with automatic deployments from the `main` branch.
+Configured for continuous deployment with **Vercel**. Every push to the `main` branch triggers an automatic production build.
+
+---
+
+## 👤 Author
+
+Developed by **Jashan Randhawa**  
+GitHub: [@Jashan-randhawa](https://github.com/Jashan-randhawa)
