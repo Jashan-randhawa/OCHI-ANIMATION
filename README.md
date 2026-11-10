@@ -31,6 +31,18 @@ Experience the live deployment on Vercel:
 
 ---
 
+## 📚 Documentation & Wiki
+
+Detailed technical guides and architectural breakdowns are available in the [Wiki](wiki/Home.md):
+
+- [📖 Wiki Home](wiki/Home.md)
+- [🏗️ Architecture & Lifecycle](wiki/Architecture.md)
+- [🎬 Animation Engineering Guide](wiki/Animation-Guide.md)
+- [🧩 Components Reference](wiki/Components.md)
+- [🎨 Typography & Design Tokens](wiki/Typography-and-Styling.md)
+
+---
+
 ## 🏗️ Project Architecture
 
 ```
